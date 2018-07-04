@@ -164,7 +164,7 @@ include_once("config.php");
                                     $precio = $costo_estm['precio'];
                                 }
 
-                                print $no_cantidad[$j][1]." estampas de nombre: ".$no_cantidad[$j][0]." con un costo individual de: ".$precio;
+                                print $no_cantidad[$j][1]." estampas de número: ".$no_cantidad[$j][0]." con un costo individual de: ".$precio;
                                 echo "<br>";
                             }
                         }
@@ -187,7 +187,7 @@ include_once("config.php");
                                     $precio = $costo_estm['precio'];
                                 }
 
-                                print $no_cantidad[$j][1]." estampas de nombre: ".$no_cantidad[$j][0]." con un costo individual de: ".$precio;
+                                print $no_cantidad[$j][1]." estampas de número: ".$no_cantidad[$j][0]." con un costo individual de: ".$precio;
                                 echo "<br>";
                             }
                         }
@@ -201,17 +201,15 @@ include_once("config.php");
     print "El total general es: ".$total_general;
         echo "<br>";echo "<br>";
         if(isset($faltante)){
+
             $fal_total = count($faltante);
             for($i = 0; $i <= ($fal_total-1) ; $i++){
+
                 if($faltante[$i][3] == 1){
-                    if($i <= ($fal_total-1)){
-                        if($faltante[$i][2] == $aux){
-                            print "*Faltan ".$faltante[$i][0]." estampas de nombre: ".$faltante[$i][1];
-                        }
-                        echo "<br>";
-                    }
+                    print "*Faltan ".$faltante[$i][0]." estampas de número: ".$faltante[$i][1];
+                    echo "<br>";
                 }else{
-                    print "La estampa de nombre: ".$faltante[$i][1]." no pertenece al album indicado";
+                    print "La estampa de número: ".$faltante[$i][1]." no pertenece al album indicado";
                     echo "<br>";
                 }
             }
