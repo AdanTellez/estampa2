@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<a href="index.php">Volver a Inicio</a>
+<a href="index.php">Home</a>
 <?php
 //including the database connection file
 include_once("config.php");
@@ -21,7 +21,7 @@ include_once("config.php");
     $tamaño   = strlen($estampas);
     $total[0] = 0;
     
-    //print $estampas;
+    print $estampas;
     echo "<br>";
     
     $cont=0;
@@ -191,23 +191,6 @@ include_once("config.php");
                                 echo "<br>";
                             }
                         }
-<<<<<<< HEAD
-=======
-
-<<<<<<< HEAD
-                    print $no_cantidad[$j][1]." estampas con número ".$no_cantidad[$j][0]." con un costo individual de: ".$precio;
-                    echo "<br>";
-                }
-            }
-            if(isset($faltante)){
-                if($i <= ($fal_total-1)){
-                    if($faltante[$i][2] == $aux){
-                        print "*Faltan ".$faltante[$i][0]." estampas con número: ".$faltante[$i][1];
-=======
-                        print $no_cantidad[$j][1]." estampas de nombre: ".$no_cantidad[$j][0]." con un costo individual de: ".$precio;
-                        echo "<br>";
->>>>>>> 2fd9aceb3e59688242f6686e1d5421587f6c162e
->>>>>>> 0aa5f92a73ec7787fb5a30d2f9fa5d54f2353ba4
                     }
                     print "El total de la clase ".$res['color']." es: ".$total[$i][1];
                     echo "<br>";echo "<br>";

@@ -25,10 +25,6 @@ $result_clase = mysqli_query($mysqli, "SELECT * FROM clase ORDER BY id_clase DES
        <h1>Gestor de estampas</h1>
        
         <form action="buscar-estampa.php" method="post" >
-<<<<<<< HEAD
-            <p>Estampas</p>
-            <input type="text" class="big-space" name="estampas">  
-=======
             <input type="text" class="big-space" name="estampas">
               <?php
                   include_once("config.php");
@@ -41,9 +37,7 @@ $result_clase = mysqli_query($mysqli, "SELECT * FROM clase ORDER BY id_clase DES
                       }
                   echo '</select>';
               ?>
->>>>>>> 2fd9aceb3e59688242f6686e1d5421587f6c162e
             <input type="submit" class="btn-green" name="class-selector" value="Cotizar estampas" >
-            
         </form>
         
     </div>
@@ -62,9 +56,9 @@ $result_clase = mysqli_query($mysqli, "SELECT * FROM clase ORDER BY id_clase DES
     <div class="flex nowrap">
         <div class="center col three">
            <h2>Album</h2>
-            <a href="add-album.php">Agregar Album</a>
+            <a href="add-album.php">Add New Album</a>
+            <a href="estadisticas.php">Estadísticas</a>
         </div>
-        
 
         <div class="center col three">
             <form action="add-estampa.php" method="post" >
@@ -94,12 +88,12 @@ $result_clase = mysqli_query($mysqli, "SELECT * FROM clase ORDER BY id_clase DES
 
 
     <div class="flex">
-        <div class="col center three">
+        <div class="col center">
             <h2>Albums</h2>
-            <table>
+            <table width='80%' border=0>
 
             <tr>
-                <td><b>Nombre</b></td>
+                <td>Nombre</td>
             </tr>
             <?php 
             //while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array 
@@ -108,17 +102,17 @@ $result_clase = mysqli_query($mysqli, "SELECT * FROM clase ORDER BY id_clase DES
                 echo "<td>".$res['nombre']."</td>";
             //id->id_album
             //aux=2 == borrado de album
-                echo "<td><a href=\"edit.php?id=$res[id_album]\">Estampas</a> | <a href=\"delete.php?id=$res[id_album]&aux=2\" onClick=\"return confirm('¿Está seguro de eliminar este album?, todas las estampas del álbum serán eliminadas IRREVERSIBLEMENTE')\">Borrar</a></td>";		
+                echo "<td><a href=\"edit.php?id=$res[id_album]\">Estampas</a> | <a href=\"delete.php?id=$res[id_album]&aux=2\" onClick=\"return confirm('Are you sure you want to delete?, todas las estampas del álbum serán eliminadas')\">Borrar</a></td>";		
             }
             ?>
             </table>
         </div>
-        <div class="col center three">
+        <div class="col center">
             <h2>Clases</h2>
-          <table>
+          <table width='80%' border=0>
 
           <tr>
-            <td><b>Color</b></td>
+            <td>Color</td>
           </tr>
           <?php 
           //while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array 
@@ -132,11 +126,6 @@ $result_clase = mysqli_query($mysqli, "SELECT * FROM clase ORDER BY id_clase DES
           }
           ?>
           </table>
-        </div>
-        
-        <div class="center col three">
-           <h2>Estadísticas</h2>
-            <a href="estadisticas.php">Más Vendidas</a>
         </div>
     </div>
 </section>
