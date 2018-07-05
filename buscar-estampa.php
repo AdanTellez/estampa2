@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<a href="index.php">Volver a Inicio</a>
+<a href="index.php">Home</a>
 <?php
 //including the database connection file
 include_once("config.php");
@@ -20,8 +20,9 @@ include_once("config.php");
     $estampas = trim($estampas);
     $tamaño   = strlen($estampas);
     $total[0] = 0;
-    echo "<p>Datos ingresados: </p>";
-    print "<p>".$estampas."</p>";
+    
+    print $estampas;
+    echo "<br>";
     
     $cont=0;
 
@@ -104,6 +105,7 @@ include_once("config.php");
                     $total[0][1] = $no_cantidad[$i][2];
                     $nuevo_total = 1;
                 }else{
+                    $nuevo_total = 0;
                     for($j = 0; $j <= ($can_total-2); $j++){
                         if(isset($total[$j][0])){
                             if($no_cantidad[$i][3] == $total[$j][0]){
@@ -113,8 +115,8 @@ include_once("config.php");
                         }
                     }
                     if($nuevo_total == 0){
-                        $total[($can_total-2)][0] = $no_cantidad[$i][3];
-                        $total[($can_total-2)][1] = $no_cantidad[$i][2];
+                        $total[($can_total-1)][0] = $no_cantidad[$i][3];
+                        $total[($can_total-1)][1] = $no_cantidad[$i][2];
                     }
                     $nuevo_total = 0;
                 }
@@ -127,6 +129,7 @@ include_once("config.php");
                     $total[0][1] = $no_cantidad[$i][2];
                     $nuevo_total = 1;
                 }else{
+                    $nuevo_total = 0;
                     for($j = 0; $j <= ($can_total-2); $j++){
                         if(isset($total[$j][0])){
                             if($no_cantidad[$i][3] == $total[$j][0]){
@@ -136,8 +139,8 @@ include_once("config.php");
                         }
                     }
                     if($nuevo_total == 0){
-                        $total[($can_total-2)][0] = $no_cantidad[$i][3];
-                        $total[($can_total-2)][1] = $no_cantidad[$i][2];
+                        $total[($can_total-1)][0] = $no_cantidad[$i][3];
+                        $total[($can_total-1)][1] = $no_cantidad[$i][2];
                     }
                     $nuevo_total = 0;
                 }
@@ -175,7 +178,7 @@ include_once("config.php");
                     echo "<br>";echo "<br>";
                 }
         }else{
-            for($i = 0; $i <= ($can_total-2); $i++){
+            for($i = 0; $i <= ($can_total-1); $i++){
                 $aux = $total[$i][0];
                 $total_general += $total[$i][1];
                 $result = mysqli_query($mysqli, "SELECT * FROM clase WHERE id_clase=$aux");
