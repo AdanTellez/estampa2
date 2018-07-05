@@ -15,9 +15,9 @@ include_once("config.php");
 
 if(isset($_POST['Submit'])) {	
 	$id_clase   = mysqli_real_escape_string($mysqli, $_POST['clase']);
-    print $id_clase;
+    //print $id_clase;
 	$id_album   = mysqli_real_escape_string($mysqli, $_POST['album']);
-    print $id_album;
+    //print $id_album;
 	$no         = mysqli_real_escape_string($mysqli, $_POST['no']);
     $precio     = mysqli_real_escape_string($mysqli, $_POST['precio']);
     $inventario = mysqli_real_escape_string($mysqli, $_POST['inventario']);

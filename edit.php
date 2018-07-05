@@ -22,7 +22,7 @@ while($res 	= mysqli_fetch_array($result))
 <body>
 <a href="index.php">Volver a Inicio</a>
 <?php echo "<h2>Album  ".$name."</h2>"; ?>
-	<table width='50%' border=0>
+	<table>
 
 	<tr bgcolor='#CCCCCC'>
 		<td>Estampas</td>
@@ -42,7 +42,7 @@ while($res 	= mysqli_fetch_array($result))
 		echo "<td>Inventario: ".$res['inventario']."</td>";
     //id->id_estampa
 		//aux=1 == borrado de estampa
-		echo "<td><a href=\"edit-estampa.php?id=$res[id_estampa]\">Edit</a> | <a href=\"delete.php?id=$res[id_estampa]&aux=1\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";		
+		echo "<td><a href=\"edit-estampa.php?id=$res[id_estampa]\">Editar</a> | <a href=\"delete.php?id=$res[id_estampa]&aux=1\" onClick=\"return confirm('¿Seguro que desea eliminar?')\">Eliminar</a></td>";		
 	}
 	?>
 </table>

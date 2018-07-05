@@ -97,7 +97,7 @@
             </tr>
 			<tr> 
 				<td></td>
-				<td><input type="submit" name="Submit" value="Update"></td>
+				<td><input type="submit" name="Submit" value="Actualizar"></td>
 			</tr>
 		</table>
 	</form>

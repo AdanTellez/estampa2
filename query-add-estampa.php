@@ -22,7 +22,7 @@ if(isset($_POST['Submit'])) {
     $id_album   = mysqli_real_escape_string($mysqli, $_POST['id_album']);
 	// checking empty fields
     
-    print $id_clase;
+    /*print $id_clase;
     echo '<br>';
     print $id_album;
     echo '<br>';
@@ -32,6 +32,7 @@ if(isset($_POST['Submit'])) {
     echo '<br>';
     print $inventario;
     echo '<br>';
+    */
     
 	if(empty($no) || empty($precio) || empty($inventario)){
 				

@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<a href="index.php">Home</a>
+<a href="index.php">Volver a Inicio</a>
 <?php
 //including the database connection file
 include_once("config.php");
@@ -20,9 +20,8 @@ include_once("config.php");
     $estampas = trim($estampas);
     $tamaño   = strlen($estampas);
     $total[0] = 0;
-    
-    print $estampas;
-    echo "<br>";
+    echo "<p>Datos ingresados: </p>";
+    print "<p>".$estampas."</p>";
     
     $cont=0;
 

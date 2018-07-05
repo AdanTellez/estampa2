@@ -9,13 +9,13 @@
 	<br/><br/>
 
 	<form action="query-add-album.php" method="post" name="form1">
-		<table width="25%" border="0">
+		<table>
 			<tr> 
 				<td>Nombre del Album</td>
 				<td><input type="text" name="nombre"></td>
 			</tr>
 			<tr> 
-				<td><input type="submit" name="Submit" value="Add"></td>
+				<td><input type="submit" name="Submit" value="Agregar"></td>
 			</tr>
 		</table>
 	</form>
