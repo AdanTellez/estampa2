@@ -52,10 +52,13 @@ include_once("config.php");
             if($estampas[$i]==","){
                 $no_cantidad[$cont][1]="";
                 $i++;
-                    while (is_numeric($estampas[$i])){
-                        $no_cantidad[$cont][1].=$estampas[$i]; //número de veces que quiere la estampa
-                        $i++;
-                    } 
+                while (is_numeric($estampas[$i])){
+                    $no_cantidad[$cont][1].=$estampas[$i]; //número de veces que quiere la estampa
+                    $i++;
+                    if($i >= $tamaño){
+                        break;
+                    }
+                } 
             }
             // cuando es -
              $cont++;  
@@ -88,7 +91,6 @@ include_once("config.php");
 
         while($res = mysqli_fetch_array($result)){
             if($res['inventario'] < $no_cantidad[$i][1]){
-
                 $no_cantidad[$i][2] += ($res['precio'])*$res['inventario'];
                 $no_cantidad[$i][3]  = $res['id_clase'];
                 $faltante[$contador][0] =  ($no_cantidad[$i][1])-$res['inventario'];
@@ -97,11 +99,11 @@ include_once("config.php");
                 $faltante[$contador][3] =  1;
                 $contador++;
                 $no_cantidad[$i][1]  = $res['inventario'];
-
                 $can_total = count($total);
                 if($can_total == 1){
                     $total[0][0] = $no_cantidad[$i][3];
                     $total[0][1] = $no_cantidad[$i][2];
+                    $nuevo_total = 1;
                 }else{
                     for($j = 0; $j <= ($can_total-2); $j++){
                         if(isset($total[$j][0])){
@@ -124,6 +126,7 @@ include_once("config.php");
                 if($can_total == 1){
                     $total[0][0] = $no_cantidad[$i][3];
                     $total[0][1] = $no_cantidad[$i][2];
+                    $nuevo_total = 1;
                 }else{
                     for($j = 0; $j <= ($can_total-2); $j++){
                         if(isset($total[$j][0])){
