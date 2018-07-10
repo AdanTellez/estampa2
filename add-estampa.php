@@ -77,7 +77,7 @@
 			</tr>
 			<tr> 
 				<td></td>
-				<td><input type="submit" name="Submit" value="Add"></td>
+				<td><input type="submit" name="Submit" value="Agregar"></td>
 			</tr>
 		</table>
 	</form>

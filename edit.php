@@ -24,7 +24,7 @@ while($res 	= mysqli_fetch_array($result))
 <?php echo "<h2>Album  ".$name."</h2>"; ?>
 	<table>
 
-	<tr bgcolor='#CCCCCC'>
+	<tr>
 		<td>Estampas</td>
 	</tr>
 	<?php 

@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<a href="index.php">Home</a>
+<a href="index.php">Volver a Inicio</a>
 <?php
 //including the database connection file
 include_once("config.php");
@@ -19,12 +19,15 @@ include_once("config.php");
     if(empty($estampas)){
         echo "Debe ingresar las estampas a buscar";
     }else{
+        
         //$estampas="16-123-8,12-66,3";  
         $estampas = trim($estampas);
         $tamaño   = strlen($estampas);
         $total[0] = 0;
         
-        //print $estampas;
+        echo "<p>Datos ingresados: </p>";
+        print "<p>".$estampas."</p>";
+        
         echo "<br>";
         
         $cont=0;
