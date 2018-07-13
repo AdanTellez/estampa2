@@ -54,8 +54,8 @@ include_once("config.php");
                 //.= append
             }
             else{
-                //si es ,
-                if($estampas[$i]==","){
+                //si es -
+                if($estampas[$i]=="-"){
                     $no_cantidad[$cont][1]="";
                     $i++;
                     while (is_numeric($estampas[$i])){

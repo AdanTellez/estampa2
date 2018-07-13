@@ -55,7 +55,7 @@ if(isset($_POST['Submit'])) {
             
             //display success message
             echo "<font color='green'>Estampa agregada correctamente.";
-            echo "<br/><a href='index.php'>Regresar a Inicio</a>"; 
+            echo "<br/><a href='index2.php'>Regresar a Inicio</a>"; 
         }
 		
 	}
