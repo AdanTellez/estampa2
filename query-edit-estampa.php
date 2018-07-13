@@ -25,7 +25,7 @@ if(isset($_POST['Submit'])) {
     $id_estampa = $_SESSION["id_estampa"];
 	// checking empty fields
     
-	if((empty($no) && $no!=0) || empty($precio) || empty(($inventario) && $inventario!=0)){
+	if((empty($no) && $no!=0) || empty($precio) || (empty($inventario) && $inventario!=0)){
 				
 		echo "Debe llenar todos los campos";
 
@@ -47,10 +47,10 @@ if(isset($_POST['Submit'])) {
                 }
                 //display success message
                 echo "<font color='green'>Estampa editada correctamente.";
-                echo "<br/><a href='index.php'>Regresar a Inicio</a>"; 
+                echo "<br/><a href='index2.php'>Regresar a Inicio</a>"; 
             }else{
                 echo "<font color='red'>Ya exitse una estampa con ese número en ese album</font><br/>";
-                echo "<br/><a href='javascript:self.history.back();'>Volver</a>";
+                echo "<br/><a href='index2.php'>Volver</a>";
             }
         }
         else{
@@ -61,7 +61,7 @@ if(isset($_POST['Submit'])) {
             
             //display success message
             echo "<font color='green'>Estampa editada correctamente.";
-            echo "<br/><a href='index.php'>Regresar a Inicio</a>"; 
+            echo "<br/><a href='index2.php'>Regresar a Inicio</a>"; 
         }
 		
 	}
