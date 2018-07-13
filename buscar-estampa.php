@@ -16,7 +16,7 @@ include_once("config.php");
 
     $estampas = $_POST['estampas'];
     $id_album = $_POST['id_album'];
-    if(empty($estampas)){
+    if(empty($estampas) && $estampas!=0 ){
         echo "Debe ingresar las estampas a buscar";
     }else{
         

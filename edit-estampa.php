@@ -29,7 +29,7 @@
 
 <body>
     
-	<a href="index.php">Volver a Inicio</a>
+	<a href="index2.php">Volver a Inicio</a>
     <?php  echo "<br/><a href='javascript:self.history.back();'>Volver</a>"; ?>
 	<br/><br/>
 

@@ -5,7 +5,7 @@
 </head>
 
 <body>
-	<a href="index.php">Volver a Inicio</a>
+	<a href="index2.php">Volver a Inicio</a>
 	<br/><br/>
 
 	<form action="query-add-category.php" method="post" name="form1">

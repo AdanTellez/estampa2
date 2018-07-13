@@ -19,7 +19,7 @@
 
 <body>
     
-	<a href="index.php">Volver a Inicio</a>
+	<a href="index2.php">Volver a Inicio</a>
 	<br/><br/>
 
 	<form action="query-edit-class.php" method="post" name="form1">

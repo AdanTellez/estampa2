@@ -34,18 +34,18 @@ if(isset($_POST['Submit'])) {
     echo '<br>';
     */
     
-	if(empty($no) || empty($precio) || empty($inventario)){
+	if((empty($no) && $no!=0)  || empty($precio) || (empty($inventario) && $inventario!=0)){
 				
 		echo "Debe llenar todos los campos";
 
 		//link to the previous page
-		echo "<br/><a href='javascript:self.history.back();'>Volver</a>";
+		echo "<br/><a href='index2.php'>Volver</a>";
 	} else {
         $result = mysqli_query($mysqli, "SELECT no, id_album FROM estampa WHERE no='$no' and id_album='$id_album'");
         $res = mysqli_fetch_array($result);
         if($no==$res['no'] and $id_album==$res['id_album']){
             echo "<font color='red'>Ya exitse una estampa con ese número en ese album</font><br/>";
-            echo "<br/><a href='javascript:self.history.back();'>Volver</a>";
+            echo "<br/><a href='index2.php'>Volver</a>";
         }
         else{
            // if all the fields are filled (not empty) 

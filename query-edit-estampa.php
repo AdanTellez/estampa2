@@ -25,12 +25,12 @@ if(isset($_POST['Submit'])) {
     $id_estampa = $_SESSION["id_estampa"];
 	// checking empty fields
     
-	if(empty($no) || empty($precio) || empty($inventario)){
+	if((empty($no) && $no!=0) || empty($precio) || empty(($inventario) && $inventario!=0)){
 				
 		echo "Debe llenar todos los campos";
 
 		//link to the previous page
-		echo "<br/><a href='javascript:self.history.back();'>Volver</a>";
+		echo "<br/><a href='index2.php'>Volver</a>";
 	} else {
         $result = mysqli_query($mysqli, "SELECT no, id_album, id_estampa, id_clase FROM estampa WHERE no='$no' and id_album='$id_album'");
         $res = mysqli_fetch_array($result);
