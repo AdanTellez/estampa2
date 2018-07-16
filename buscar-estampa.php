@@ -201,7 +201,6 @@ include_once("config.php");
                     if(isset($total[$i][1])){
                         $total_general += $total[$i][1];
                     }
-                    
                     $result = mysqli_query($mysqli, "SELECT * FROM clase WHERE id_clase=$aux");
                     if($result){
                         while($res = mysqli_fetch_array($result)){
@@ -209,11 +208,11 @@ include_once("config.php");
                                 if(isset($no_cantidad[$j][3])){
                                     if($no_cantidad[$j][3] == $aux){
                                         $id_estampa = $no_cantidad[$j][0];
-                                        $costo_estampa = mysqli_query($mysqli, "SELECT * FROM estampa WHERE no=$id_estampa");
+                                        $id_clase = $no_cantidad[$j][3];
+                                        $costo_estampa = mysqli_query($mysqli, "SELECT * FROM estampa WHERE no=$id_estampa AND id_clase=$id_clase");
                                         while($costo_estm = mysqli_fetch_array($costo_estampa)){
                                             $precio = $costo_estm['precio'];
                                         }
-
                                         print $no_cantidad[$j][1]." estampas de número: ".$no_cantidad[$j][0]." con un costo individual de: ".$precio;
                                         echo "<br>";
                                     }
@@ -243,6 +242,7 @@ include_once("config.php");
                 }
             }
             //print_r($total);
+            //print_r($no_cantidad);
             //clases que existen en la busqueda
             //print_r($clase);
         echo '</pre>';
