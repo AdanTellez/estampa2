@@ -5,7 +5,7 @@ ul {
     margin: 0;
     padding: 5px 80px;
     overflow: hidden;
-    background-color: #333;
+    background: #1d398d;
 }
 
 li {

@@ -58,7 +58,7 @@
 				<td><input type="number" step="1" name="inventario"></td>
 			</tr>
 			<tr>
-               <td>Album</td>
+               <td>Modelo</td>
                <td>
                 <?php
                     

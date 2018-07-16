@@ -20,13 +20,13 @@ $result_clase = mysqli_query($mysqli, "SELECT * FROM clase ORDER BY id_clase DES
    
             <div class="flex nowrap">
                 <div class="center col three">
-                   <h2>Album</h2>
+                   <h2>Nuevos Inventarios</h2>
                     <a href="add-album.php">Agregar Album</a>
                 </div>
 
                 <div class="center col three">
                     <form action="add-estampa.php" method="post" >
-                               <h2>Estampa</h2>
+                               <h2>Modelo</h2>
                                <p>(elegir clase, elegir clase variable para precios únicos)</p>
                                 <?php
                                     include_once("config.php");
@@ -39,7 +39,7 @@ $result_clase = mysqli_query($mysqli, "SELECT * FROM clase ORDER BY id_clase DES
                                         }
                                     echo '</select>';
                                 ?>
-                       <input type="submit" class="btn-green-small" name="class-selector" value="Añadir estampa nueva" >
+                       <input type="submit" class="btn-green-small" name="class-selector" value="Añadir Modelo Nuevo" >
                     </form>
                 </div>
 
@@ -53,7 +53,7 @@ $result_clase = mysqli_query($mysqli, "SELECT * FROM clase ORDER BY id_clase DES
 
             <div class="flex">
                 <div class="col center three">
-                    <h2>Albums</h2>
+                    <h2>Inventarios</h2>
                     <table>
 
                     <tr>

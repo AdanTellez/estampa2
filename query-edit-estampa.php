@@ -46,8 +46,8 @@ if(isset($_POST['Submit'])) {
                  $result = mysqli_query($mysqli, "UPDATE estampa SET id_clase='$id_clase',id_album='$id_album',no='$no',precio='$precio',inventario='$inventario' WHERE id_estampa='$id_estampa'");  
                 }
                 //display success message
-                echo "<font color='green'>Estampa editada correctamente.";
-                echo "<br/><a href='index2.php'>Regresar a Inicio</a>"; 
+                echo "<font color='green'>Estampa editada correctamente!.";
+                echo '<br/><a href = "edit.php?id='.$id_album.'">Ir a inventario</a>'; 
             }else{
                 echo "<font color='red'>Ya exitse una estampa con ese número en ese album</font><br/>";
                 echo "<br/><a href='index2.php'>Volver</a>";
@@ -61,7 +61,8 @@ if(isset($_POST['Submit'])) {
             
             //display success message
             echo "<font color='green'>Estampa editada correctamente.";
-            echo "<br/><a href='index2.php'>Regresar a Inicio</a>"; 
+            echo '<br/><a href = "edit.php?id='.$id_album.'">Ir a inventario</a>'; 
+            //echo '<a href = "profile.php/'.$name.'">'.$name.'</a><br/>';
         }
 		
 	}

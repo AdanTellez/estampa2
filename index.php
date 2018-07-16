@@ -13,7 +13,7 @@ $result_clase = mysqli_query($mysqli, "SELECT * FROM clase ORDER BY id_clase DES
 <!-- -->
 <html>
 <head>	
-	<title> Cotizar Estampas</title>
+	<title> Gestor</title>
     <?php include 'header.php';?>
 </head>
 
@@ -22,7 +22,7 @@ $result_clase = mysqli_query($mysqli, "SELECT * FROM clase ORDER BY id_clase DES
 
 <section id="buscador">
     <div class="center">
-       <h1>Gestor de estampas</h1>
+       <h1>Gestor</h1>
        
         <form action="buscar-estampa.php" method="post" >
             <input type="text" class="big-space" name="estampas">
@@ -37,7 +37,7 @@ $result_clase = mysqli_query($mysqli, "SELECT * FROM clase ORDER BY id_clase DES
                       }
                   echo '</select>';
               ?>
-            <input type="submit" class="btn-green" name="class-selector" value="Cotizar estampas" >
+            <input type="submit" class="btn-green" name="class-selector" value="Cotizar modelo" >
         </form>
         
     </div>

@@ -11,7 +11,7 @@
 	<form action="query-add-category.php" method="post" name="form1">
 		<table>
 			<tr> 
-				<td>Color</td>
+				<td>Modelo</td>
 				<td><input type="text" name="color"></td>
 			</tr>
 			<tr>
