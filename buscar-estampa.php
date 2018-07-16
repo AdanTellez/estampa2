@@ -177,7 +177,7 @@ include_once("config.php");
                                 if(isset($no_cantidad[$j][3])){
                                     if($no_cantidad[$j][3] == $aux){
                                         $id_estampa = $no_cantidad[$j][0];
-                                        $costo_estampa = mysqli_query($mysqli, "SELECT * FROM estampa WHERE no=$id_estampa");
+                                        $costo_estampa = mysqli_query($mysqli, "SELECT * FROM estampa WHERE no=$id_estampa AND id_clase=$id_clase");
                                         while($costo_estm = mysqli_fetch_array($costo_estampa)){
                                             $precio = $costo_estm['precio'];
                                         }
