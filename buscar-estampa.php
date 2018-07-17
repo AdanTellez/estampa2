@@ -109,6 +109,7 @@ include_once("config.php");
                     if($can_total == 1){
                         $total[0][0] = $no_cantidad[$i][3];
                         $total[0][1] = $no_cantidad[$i][2];
+                        $total[0][2] = 1;
                         $nuevo_total = 1;
                     }else{
                         $nuevo_total = 0;
@@ -116,6 +117,7 @@ include_once("config.php");
                             if(isset($total[$j][0])){
                                 if($no_cantidad[$i][3] == $total[$j][0]){
                                     $total[$j][1] += $no_cantidad[$i][2];
+                                    $total[$j][2] += 1;
                                     $nuevo_total = 1;
                                 }
                             }
@@ -123,6 +125,7 @@ include_once("config.php");
                         if($nuevo_total == 0){
                             $total[($can_total-1)][0] = $no_cantidad[$i][3];
                             $total[($can_total-1)][1] = $no_cantidad[$i][2];
+                            $total[($can_total-1)][2] = 1;
                         }
                         $nuevo_total = 0;
                     }
@@ -133,6 +136,7 @@ include_once("config.php");
                     if($can_total == 1){
                         $total[0][0] = $no_cantidad[$i][3];
                         $total[0][1] = $no_cantidad[$i][2];
+                        $total[0][2] = 1;
                         $nuevo_total = 1;
                     }else{
                         $nuevo_total = 0;
@@ -140,6 +144,7 @@ include_once("config.php");
                             if(isset($total[$j][0])){
                                 if($no_cantidad[$i][3] == $total[$j][0]){
                                     $total[$j][1] += $no_cantidad[$i][2];
+                                    $total[$j][2] += 1;
                                     $nuevo_total = 1;
                                 }
                             }
@@ -147,6 +152,7 @@ include_once("config.php");
                         if($nuevo_total == 0){
                             $total[($can_total-1)][0] = $no_cantidad[$i][3];
                             $total[($can_total-1)][1] = $no_cantidad[$i][2];
+                            $total[($can_total-1)][2] = 1;
                         }
                         $nuevo_total = 0;
                     }
@@ -160,6 +166,7 @@ include_once("config.php");
             //print_r($no_cantidad);
             //print_r($faltante);
             $total_general = 0;
+            $total[0][3] = 0;
         if(isset($can_total)){
             if($can_total == 1){
                     if(isset($total[0][0])){
@@ -181,14 +188,18 @@ include_once("config.php");
                                         while($costo_estm = mysqli_fetch_array($costo_estampa)){
                                             $precio = $costo_estm['precio'];
                                         }
-
-                                        print $no_cantidad[$j][1]." estampas de número: ".$no_cantidad[$j][0]." con un costo individual de: ".$precio;
+                                        print "Modelo del número ".$no_cantidad[$j][0]." :".$no_cantidad[$j][1];
+                                        //print $no_cantidad[$j][1]." estampas de número: ".$no_cantidad[$j][0]." con un costo individual de: ".$precio;
                                         echo "<br>";
                                     }
                                 }
                             }
-                            print "El total de la clase ".$res['color']." es: ".$total[0][1];
+                            echo "<br>";
+                            print "Total de estampas de la clase ".$res['color'].": ".$total[0][2];
+                            echo "<br>";
+                            print "Precio total: ".$total[0][1];
                             echo "<br>";echo "<br>";
+                            $total[0][3] += $total[0][2];
                         }
                     }
             }else{
@@ -213,18 +224,27 @@ include_once("config.php");
                                         while($costo_estm = mysqli_fetch_array($costo_estampa)){
                                             $precio = $costo_estm['precio'];
                                         }
-                                        print $no_cantidad[$j][1]." estampas de número: ".$no_cantidad[$j][0]." con un costo individual de: ".$precio;
+                                        print "Modelo del número ".$no_cantidad[$j][0]." :".$no_cantidad[$j][1];
+                                        //print $no_cantidad[$j][1]." estampas de número: ".$no_cantidad[$j][0]." con un costo individual de: ".$precio;
                                         echo "<br>";
                                     }
                                 }
                             }
-                            print "El total de la clase ".$res['color']." es: ".$total[$i][1];
+                            echo "<br>";
+                            print "Total de estampas de la clase ".$res['color'].": ".$total[$i][2];
+                            echo "<br>";
+                            print "Precio total: ".$total[$i][1];
                             echo "<br>";echo "<br>";
+                            $total[0][3] += $total[$i][2];
                         }
                     }
                 }
             }
         }
+        print "----------------------------------------------";
+        echo "<br>";
+        print "Total de estampas a vender: ".$total[0][3];
+        echo "<br>";
         print "El total general es: ".$total_general;
             echo "<br>";echo "<br>";
             if(isset($faltante)){
