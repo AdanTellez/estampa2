@@ -204,3 +204,38 @@ li {
 #consultar .mid-space {
   width: 35%;
 }
+form {
+  margin-top: 40px !important;
+}
+font {
+  margin-top: 140px !important;
+}
+.navbar {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  margin-bottom: 100px;
+}
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 5px 0px;
+  background: #1d398d;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+.navbar li {
+  float: right;
+  padding-bottom: 5px;
+}
+.navbar li a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  margin-right: 40px;
+}
