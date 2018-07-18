@@ -239,3 +239,6 @@ font {
   font-size: 17px;
   margin-right: 40px;
 }
+.jsgrid-header-cell {
+  color: #1d398d !important;
+}
