@@ -17,9 +17,9 @@
  	 	
  	break;
 
- 	 case "DELETE":
+ 	case "DELETE":
 
- 	 break;
+ 	break;
 
  }
 

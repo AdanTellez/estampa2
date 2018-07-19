@@ -110,6 +110,16 @@ while($res 	= mysqli_fetch_array($result))
             data: results,
 
             controller: {
+                /*
+                    insertItem: function(item) {
+                        return $.ajax({
+                            type: "POST",
+                            url: "/items",
+                            data: item
+                        });
+                },
+    
+                */
                 updateItem: function(item) {
                     console.log(item) 
                     return $.ajax({
@@ -117,7 +127,17 @@ while($res 	= mysqli_fetch_array($result))
                         url: "querys-estampas.php",
                         data: item
                     });
-                }
+                },
+
+                /*
+                     deleteItem: function(item) {
+                        return $.ajax({
+                            type: "DELETE",
+                            url: "/items",
+                            data: item
+                        });
+                    }
+                */
             },
 
             fields: [
