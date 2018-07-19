@@ -109,6 +109,17 @@ while($res 	= mysqli_fetch_array($result))
             //data: clients,
             data: results,
 
+            controller: {
+                updateItem: function(item) {
+                    console.log(item) 
+                    return $.ajax({
+                        type: "PUT",
+                        url: "querys-estampas.php",
+                        data: item
+                    });
+                }
+            },
+
             fields: [
                 { name: "No", type: "number", width: 50, validate: "required" },
                 { name: "Clase", type: "text", width: 60 },
@@ -116,6 +127,8 @@ while($res 	= mysqli_fetch_array($result))
                 { name: "Inventario", type: "number", width: 50 },
                 { type: "control" }
             ]
+
+           
         });
          
      });
