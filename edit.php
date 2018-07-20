@@ -121,23 +121,28 @@ while($res 	= mysqli_fetch_array($result))
     
                 */
                 updateItem: function(item) {
-                    console.log(item) 
-                    return $.ajax({
+                    //console.log(item) 
+                    var result = $.ajax({
                         type: "PUT",
                         url: "querys-estampas.php",
                         data: item
                     });
+
+                    return result;
+                    
+                    console.log (result)
                 },
 
-                /*
+                
                      deleteItem: function(item) {
+                        console.log(item) 
                         return $.ajax({
                             type: "DELETE",
-                            url: "/items",
+                            url: "delete.php",
                             data: item
                         });
                     }
-                */
+                
             },
 
             fields: [
