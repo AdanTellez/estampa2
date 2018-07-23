@@ -37,7 +37,7 @@ while($res 	= mysqli_fetch_array($result))
     <div id="jsGrid">
     </div>
     
-    <?php echo "<h2>Album  ".$name."</h2>"; ?>
+    <h2>Edición Avanzada</h2>
 
     <table>
 
@@ -50,13 +50,13 @@ while($res 	= mysqli_fetch_array($result))
         while($res = mysqli_fetch_array($result)) { 
             echo "<tr>";
             echo "<td>Estampa: ".$res['no']."</td>";
-            $id_clase = $res['id_clase'];
+            //$id_clase = $res['id_clase'];
             $class = mysqli_query($mysqli, "SELECT * FROM clase WHERE id_clase=$id_clase");
-            while($clase = mysqli_fetch_array($class)) {
-                echo "<td>Clase: ".$clase['color']."</td>";
-            }
-            echo "<td>Precio: ".$res['precio']."</td>";
-            echo "<td>Inventario: ".$res['inventario']."</td>";
+            //while($clase = mysqli_fetch_array($class)) {
+                //echo "<td>Clase: ".$clase['color']."</td>";
+            //}
+            //echo "<td>Precio: ".$res['precio']."</td>";
+            //echo "<td>Inventario: ".$res['inventario']."</td>";
         //id->id_estampa
             //aux=1 == borrado de estampa
             echo "<td><a href=\"edit-estampa.php?id=$res[id_estampa]\">Editar</a> | <a href=\"delete.php?id=$res[id_estampa]&aux=1\" onClick=\"return confirm('¿Seguro que desea eliminar?')\">Eliminar</a></td>";		
@@ -66,16 +66,6 @@ while($res 	= mysqli_fetch_array($result))
     
     <script>
      jQuery(document).ready(function () {
-         
-         
-         
-           var clients = [
-            { "Name": "Otto Clay", "Clase": 25, "Precio": 1, "Inventario": "Ap #897-1459 Quam Avenue", "Married": false },
-            { "Name": "Connor Johnston", "Clase": 45, "Precio": 2, "Inventario": "Ap #370-4647 Dis Av.", "Married": true },
-            { "Name": "Lacey Hess", "Clase": 29, "Precio": 3, "Inventario": "Ap #365-8835 Integer St.", "Married": false },
-            { "Name": "Timothy Henson", "Clase": 56, "Precio": 1, "Inventario": "911-5143 Luctus Ave", "Married": true },
-            { "Name": "Ramona Benton", "Clase": 32, "Precio": 3, "Inventario": "Ap #614-689 Vehicula Street", "Married": false }
-        ]; 
          
          var results = [];
              
@@ -89,7 +79,7 @@ while($res 	= mysqli_fetch_array($result))
                 
         ?>
          
-            results.push({"No": <?php echo json_encode($res['no']); ?>, "Clase": <?php echo json_encode($clase['color']); ?>, "Precio": <?php echo json_encode($res['precio']); ?>, "Inventario": <?php echo json_encode($res['inventario']); ?>, "Married": false});
+            results.push({"No": <?php echo json_encode($res['no']); ?>, "Clase": <?php echo json_encode($clase['color']); ?>, "Precio": <?php echo json_encode($res['precio']); ?>, "Inventario": <?php echo json_encode($res['inventario']); ?>, "id": <?php echo json_encode($res['id_estampa']); ?>});
           <?php  
                  
         }  
@@ -130,15 +120,15 @@ while($res 	= mysqli_fetch_array($result))
 
                     return result;
 
-                    console.log (result)
+                    //console.log (result)
                 },
 
                 
                      deleteItem: function(item) {
-                        console.log(item) 
+                        //console.log(item) 
                         return $.ajax({
                             type: "DELETE",
-                            url: "delete.php",
+                            url: "querys-estampas.php",
                             data: item
                         });
                     }
