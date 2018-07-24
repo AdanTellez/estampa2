@@ -30,7 +30,7 @@ if(isset($_POST['Submit'])) {
         $res = mysqli_fetch_array($result);
         if($color==$res['color'] and $id_clase!=$res['id_clase']){
 
-                echo "<font color='red'>Ya exitse una clase con ese color</font><br/>";
+                echo "<font color='red'>Ya existe una clase con ese color</font><br/>";
                 echo "<br/><a href='javascript:self.history.back();'>Volver</a>";
         }
         else{

@@ -12,74 +12,68 @@
     
     <?php
         include_once("config.php");
+        $id_clase = $_POST['id_clase'];
+        $id_album = $_POST['id_album'];
+        $valor    = $_POST['valor'];
+        $_SESSION["id_clase"] = $id_clase;
+        $_SESSION["id_album"] = $id_album;
+        if($valor <= 0){
+            echo "<font color='red'>La cantidad de modelos debe ser mayor a cero</font><br/>";
+            echo "<meta http-equiv=Refresh content=0.00000001;URL=index2.php>";
+        }
+        $_SESSION["valor"] = $valor;
     ?>
 	<a href="index2.php">Volver a Inicio</a>
 	<br/><br/>
 
 	<form action="query-add-estampa.php" method="post" name="form1">
-		<table width="25%" border="0">
-			<tr> 
-				<td>No.</td>
-				<td><input type="number" step="1" name="no"></td>
-			</tr>
-			<tr> 
-				<td>Precio</td>
-			<?php
-                $id_clase = $_POST['id_clase'];
-                $_SESSION["id_clase"] = $id_clase;
-                if ($id_clase!=-1){
-            ?>    
-			
-                   <td>
-                    <?php
+    <?php 
+    for($i = 0; $i < $valor; $i++){
+        echo "<table width=25% border=0>";
+            echo "<tr>"; 
+                echo "<td>No.</td>";
+                echo "<td><input type=number step=1 name=no".($i+1)."></td>";
+            echo "</tr>";
+            echo "<tr>"; 
+                echo "<td>Precio</td>";
+                if ($id_clase!=-1){  
+            
+                   echo "<td>";
                         //print_r($_POST);
                         
                             $sql = 'SELECT * FROM clase where id_clase='.$id_clase;
                             $query = mysqli_query($mysqli, $sql);
 
-                            echo '<select name="precio" style="width: 200px">';
+                            echo "<select name=precio".($i+1)." style=width: 200px>";
                                 while ($row = mysqli_fetch_array($query)) {
                                     echo '<option value='.$row['valor'].' selected>'.$row['valor'].'</option>';
                                 }
                             echo '</select>';
                         
-                    ?>
-                    </td>
-			
-            <?php
-			    }
-                else{
-                    echo '<td><input type="number" step=".1" name="precio"></td>';
+                    echo "</td>";
+            
                 }
-            ?>
-            </tr>
-			<tr> 
-				<td>Inventario</td>
-				<td><input type="number" step="1" name="inventario"></td>
-			</tr>
-			<tr>
-               <td>Modelo</td>
-               <td>
-                <?php
-                    
-                    $sql = "SELECT * FROM album";
-                    $query = mysqli_query($mysqli, $sql);
+                else{
+                    echo "<td><input type=number step=.1 name=precio".($i+1)."></td>";
+                }
+            
+            echo "</tr>";
+            echo "<tr>"; 
+                echo "<td>Inventario</td>";
+                echo "<td><input type=number step=1 name=inventario".($i+1)."></td>";
+            echo "</tr>";
+            echo "<tr>";
 
-                    echo '<select name="id_album" style="width: 200px">';
-                    while ($row = mysqli_fetch_array($query)) {
-                        echo '<option value='.$row['id_album'].'>'.$row['nombre'].'</option>';
-                    }
-                    echo '</select>';
-                ?>
-                
-                </td>
     
-			</tr>
-			<tr> 
-				<td></td>
-				<td><input type="submit" name="Submit" value="Agregar"></td>
-			</tr>
-		</table>
+            echo "</tr>";
+            echo "<br><br><br>";
+    }
+    ?>
+            <tr>
+                <td></td>
+                <td><input type=submit name=Submit value=Agregar></td>
+            </tr>
+        </table>
 	</form>
 </body>
 </html>

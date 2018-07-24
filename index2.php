@@ -30,6 +30,15 @@ $result_clase = mysqli_query($mysqli, "SELECT * FROM clase ORDER BY id_clase DES
                                <p>(elegir clase, elegir clase variable para precios únicos)</p>
                                 <?php
                                     include_once("config.php");
+                                    $sql = "SELECT * FROM album";
+                                    $query = mysqli_query($mysqli, $sql);
+
+                                    echo '<select name="id_album" class="mid-space">';
+                                        while ($row = mysqli_fetch_array($query)) {
+                                            echo '<option value='.$row['id_album'].'>'.$row['nombre'].'</option>';
+                                        }
+                                    echo '</select>';
+
                                     $sql = "SELECT * FROM clase";
                                     $query = mysqli_query($mysqli, $sql);
 
@@ -39,6 +48,8 @@ $result_clase = mysqli_query($mysqli, "SELECT * FROM clase ORDER BY id_clase DES
                                         }
                                     echo '</select>';
                                 ?>
+                                <br>
+                                <input type="number" name="valor" step="1" Required>
                        <input type="submit" class="btn-green-small" name="class-selector" value="Añadir Modelo Nuevo" >
                     </form>
                 </div>
