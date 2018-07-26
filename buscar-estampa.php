@@ -16,6 +16,7 @@ include_once("config.php");
 
     $estampas = $_POST['estampas'];
     $id_album = $_POST['id_album'];
+    $_SESSION['id_album'] = $id_album;
     if(empty($estampas) && $estampas!=0 ){
         echo "Debe ingresar las estampas a buscar";
     }else{
@@ -55,7 +56,7 @@ include_once("config.php");
             }
             else{
                 //si es -
-                if($estampas[$i]=="-"){
+                if($estampas[$i]=="(" or $estampas[$i]=="["){
                     $no_cantidad[$cont][1]="";
                     $i++;
                     while (is_numeric($estampas[$i])){

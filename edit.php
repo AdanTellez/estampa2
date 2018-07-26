@@ -138,7 +138,7 @@ while($res 	= mysqli_fetch_array($result))
             fields: [
                 { name: "No", type: "number", width: 50, validate: "required", editing: false },
                 { name: "Clase", type: "text", width: 60, editing: false },
-                { name: "Precio", type: "number", width: 60 },
+                { name: "Precio", type: "number", width: 60, editing: false},
                 { name: "Inventario", type: "number", width: 50 },
                 { type: "control" }
             ]
