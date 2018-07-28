@@ -17,7 +17,8 @@ include_once("config.php");
     $estampas = $_POST['estampas'];
     $id_album = $_POST['id_album'];
     $_SESSION['id_album'] = $id_album;
-    if(empty($estampas) && $estampas!=0 ){
+    $estampas = str_replace(' ', '', $estampas);
+    if(empty($estampas)){
         echo "Debe ingresar las estampas a buscar";
     }else{
         
@@ -27,6 +28,7 @@ include_once("config.php");
         $total[0] = 0;
         
         echo "<p>Datos ingresados: </p>";
+
         print "<p>".$estampas."</p>";
         
         echo "<br>";
@@ -185,7 +187,7 @@ include_once("config.php");
                                 if(isset($no_cantidad[$j][3])){
                                     if($no_cantidad[$j][3] == $aux){
                                         $id_estampa = $no_cantidad[$j][0];
-                                        $costo_estampa = mysqli_query($mysqli, "SELECT * FROM estampa WHERE no=$id_estampa AND id_clase=$id_clase");
+                                        $costo_estampa = mysqli_query($mysqli, "SELECT * FROM estampa WHERE no=$id_estampa AND id_clase=$aux");
                                         while($costo_estm = mysqli_fetch_array($costo_estampa)){
                                             $precio = $costo_estm['precio'];
                                         }

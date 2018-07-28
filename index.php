@@ -25,7 +25,7 @@ $result_clase = mysqli_query($mysqli, "SELECT * FROM clase ORDER BY id_clase DES
        <h1>Gestor</h1>
        
         <form action="buscar-estampa.php" method="post" >
-            <input type="text" class="big-space" name="estampas">
+            <input type="text" class="big-space" name="estampas" required>
               <?php
                   include_once("config.php");
                   $sql = "SELECT * FROM album";
