@@ -37,8 +37,16 @@ while($res 	= mysqli_fetch_array($result))
     <div id="jsGrid">
     </div>
     
-    <h2>Edición Avanzada</h2>
+         <?php 
+         $total = 0;
+        $result = mysqli_query($mysqli, "SELECT * FROM estampa WHERE id_album=$id_album");
+        while($res = mysqli_fetch_array($result)) { 
+            $total += $res['inventario'];   
+        } 
+    ?>
+<?php echo "<h4 align= right>Total:  ".$total."</h4>"; ?>
 
+    <h2>Edición Avanzada</h2>
     <table>
 
         <tr>
@@ -51,7 +59,7 @@ while($res 	= mysqli_fetch_array($result))
             echo "<tr>";
             echo "<td>Estampa: ".$res['no']."</td>";
             //$id_clase = $res['id_clase'];
-            $class = mysqli_query($mysqli, "SELECT * FROM clase WHERE id_clase=$id_clase");
+            //$class = mysqli_query($mysqli, "SELECT * FROM clase WHERE id_clase=$id_clase");
             //while($clase = mysqli_fetch_array($class)) {
                 //echo "<td>Clase: ".$clase['color']."</td>";
             //}
@@ -70,10 +78,12 @@ while($res 	= mysqli_fetch_array($result))
          var results = [];
              
          <?php 
+         $total = 0;
         $result = mysqli_query($mysqli, "SELECT * FROM estampa WHERE id_album=$id_album");
         while($res = mysqli_fetch_array($result)) { 
             
             $id_clase = $res['id_clase'];
+            $total .= $res['inventario'];
              $class = mysqli_query($mysqli, "SELECT * FROM clase WHERE id_clase=$id_clase");
                 $clase = mysqli_fetch_array($class);
                 
@@ -81,8 +91,10 @@ while($res 	= mysqli_fetch_array($result))
          
             results.push({"No": <?php echo json_encode($res['no']); ?>, "Clase": <?php echo json_encode($clase['color']); ?>, "Precio": <?php echo json_encode($res['precio']); ?>, "Inventario": <?php echo json_encode($res['inventario']); ?>, "id": <?php echo json_encode($res['id_estampa']); ?>});
           <?php  
-                 
-        }  
+               
+        }
+
+         
     ?>
       
          
