@@ -32,7 +32,7 @@
         echo "<table width=25% border=0>";
             echo "<tr>"; 
                 echo "<td>No.</td>";
-                echo "<td><input type=number step=1 name=no".($i+1)."></td>";
+                echo "<td><input type=string step=1 name=no".($i+1)."></td>";
             echo "</tr>";
             echo "<tr>"; 
                 echo "<td>Precio</td>";

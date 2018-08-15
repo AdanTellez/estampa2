@@ -18,7 +18,7 @@ include_once("config.php");
     $id_album = $_POST['id_album'];
     $_SESSION['id_album'] = $id_album;
     $estampas = str_replace(' ', '', $estampas);
-    if(empty($estampas)){
+    if(empty($estampas) && $estampas!=0){
         echo "Debe ingresar las estampas a buscar";
     }else{
         
