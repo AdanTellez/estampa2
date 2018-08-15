@@ -46,8 +46,8 @@ $result_clase = mysqli_query($mysqli, "SELECT * FROM clase ORDER BY id_clase DES
 
 <div class="center">
        <p>Para buscar inserte sin espacios el número de estampa, posteriormente, en caso de necesitarse
-       más de una estampa del mismo número, añadir una "," después del número de estampa con el total 
-       de estampas requeridas, en caso de solo necesitar una, no agregar nada. Separar con un "-" cada
+       más de una estampa del mismo número, añadir una "( o [" después del número de estampa con el total 
+       de estampas requeridas, en caso de solo necesitar una, no agregar nada. Separar con un "- o ," cada
        estampa a buscar <b class="black">ej. 16-123-8,12-66,3</b> (significa: una estampa del no. 16 y 123, <u class="black">doce</u> estampas del no. 8 y <u class="black">tres</u> del número 66). </p><br>
 </div>
 

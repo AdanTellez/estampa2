@@ -46,7 +46,7 @@ include_once("config.php");
 
             //print $estampas[$i];
 
-            if (is_numeric($estampas[$i])){
+            if (is_numeric($estampas[$i]) ){ //or ctype_alpha($estampas[$i])
                 if(isset($no_cantidad[$cont][0])){
 
                     $no_cantidad[$cont][0].=$estampas[$i];
@@ -69,7 +69,7 @@ include_once("config.php");
                         }
                     } 
                 }
-                // cuando es -
+                // cuando es OTRA COSA
                  $cont++;  
             }
             
